@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Background</title>
+</head>
+<body>
+    
+    <button class="btn" style="margin-top:70px">click</button>
+    <input type="text" id="imp" placeholder="Enter text " >
+    <button class="btn2" style="margin-top:50px">Click</button>
+     
+    <script>
+        let btn=document.querySelector(".btn")
+        let isdark=true
+        btn.addEventListener("click",function(){
+           if(isdark){
+           document.querySelector("body").style.backgroundColor="black"
+           isdark=false
+           }else{
+           document.querySelector("body").style.backgroundColor="white"
+           isdark=true}
+        
+        
+        })
+        
+        let imp=document.getElementById("imp")
+        let btn2=document.querySelector(".btn2")
+         let d= true
+         imp.addEventListener("input",function(){
+             if(d){
+             let input=this.value
+             this.value=input.replace(/\d/g,"*")
+             
+             }
+         })
+        let a=true
+        btn2.addEventListener("click",function(){
+           if(a){
+           imp.style.backgroundColor = "blue"
+           
+           
+           imp.placeholder="enter the password"
+           a=false;
+           }else{
+            imp.style.backgroundColor = "white"
+           
+            imp.placeholder="enter your text"
+           a=true;
+           
+           }
+        
+        
+        });
+        
+    </script>
+</body>
+</html>

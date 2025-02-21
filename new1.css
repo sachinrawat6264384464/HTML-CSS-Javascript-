@@ -1,0 +1,144 @@
+
+body{
+width:100%;
+height:100vh;
+background-color: black;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+margin: 0;
+}
+.container{
+max-width: 300px; /* Desktop ke liye max width */
+width: 90%; 
+height: auto;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+position: relative;
+}
+
+.overview1,
+.overview2,
+.overview3 {
+    max-width: 320px;
+    width: 100%;
+    border-radius: 9px;
+    border: 1px solid white;
+    position: absolute;
+    transition: all 0.3s ease-in-out;
+}
+
+.overview1 {
+    height: 40%;
+    z-index: 2;
+    background-color: transparent;
+}
+
+.overview2 {
+    height: 300px;
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+}
+
+.overview3 {
+    height: 300px;
+    color: aliceblue;
+    z-index: 1;
+}
+
+.over {
+    max-width: 200px; /* Smaller for responsiveness */
+    width: 100%;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: 80px;
+    border: 1px solid #fff;
+}
+
+/* Button */
+.btn {
+    width: 50%;
+    height: auto;
+    border-radius: 10px;
+    padding: 8px;
+    background-color: white;
+    border: none;
+    transition: 0.3s ease-in-out;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: lightgray;
+}
+
+/* Responsive Design */
+
+/* For smaller devices (Tablets, 768px and below) */
+@media (max-width: 768px) {
+    .container {
+        max-width: 280px;
+        width: 95%;
+    }
+    
+    .overview1, .overview2, .overview3 {
+        max-width: 280px;
+    }
+    
+    .btn {
+        width: 60%;
+    }
+}
+
+/* For Mobile Devices (500px and below) */
+@media (max-width: 500px) {
+    .container {
+        max-width: 250px;
+        width: 100%;
+    }
+    
+    .overview1, .overview2, .overview3 {
+        max-width: 250px;
+        height: 250px;
+    }
+
+    .over {
+        max-width: 180px;
+        height: 80px;
+        top: 60px;
+    }
+
+    .btn {
+        width: 70%;
+    }
+}
+
+/* Extra Small Screens (350px and below) */
+@media (max-width: 350px) {
+    .container {
+        max-width: 220px;
+    }
+    
+    .overview1, .overview2, .overview3 {
+        max-width: 220px;
+        height: 220px;
+    }
+
+    .over {
+        max-width: 150px;
+        height: 70px;
+        top: 50px;
+    }
+
+    .btn {
+        width: 80%;
+        font-size: 12px;
+    }
+}
+

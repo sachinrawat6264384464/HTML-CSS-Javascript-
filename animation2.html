@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="weather.css">
+</head>
+<body style="background-color:rgb(246, 242, 242)">  
+<div class="container">
+    <div class="box">
+       
+          <div class="circle">  </div>
+          
+          <img src="newaddidas.jpg" class="image">
+       
+           <h3 class="hh">ADI GLO</h3>
+           <p>this is so osome. new version in the world</p>
+        
+        <button class="btn">Buy Now</button>
+        
+    </div>
+    
+</div>
+<script>
+const containers=document.querySelector('.container');
+const box=document.querySelector('.box');
+const h3=document.querySelector('.hh');
+const p=document.querySelector('p');
+const image=document.querySelector('.image');
+const button=document.querySelector('button');
+containers.addEventListener("mousemove",(e)=>{
+ let Xaxis=(window.innerWidth/2-e.pageX)/25
+ let Yaxis=(window.innerWidth/2-e.pageY)/25
+ box.style.transform=`rotateY(${Xaxis}deg) rotateX(${Yaxis}deg)`
+  
+
+})
+//in mouse move
+containers.addEventListener("mouseenter",(e)=>{
+box.style.transform="none"
+
+h3.style.transform = "translateZ(150px) "
+p.style.transform = "translateZ(80px)";
+button.style.transform = "translateZ(70px)";
+image.style.transform = "translateZ(200px) rotateZ(-45deg)";
+
+
+})
+containers.addEventListener("mouseleave",(e)=>{
+    box.style.transition="0.5s ease-out"
+    h3.style.transform = "translateZ(0px)";
+    box.style.transform="rotateY(0deg) rotateX(0deg)"
+    p.style.transform = "translateZ(0px)";
+    button.style.transform = "translateZ(0px)";
+    image.style.transform = "translateZ(0px) rotateZ(0deg)";
+
+})
+
+</script>
+</body>
+</html>

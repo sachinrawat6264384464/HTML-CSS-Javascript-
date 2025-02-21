@@ -1,0 +1,79 @@
+body {
+    background-color:black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    object-fit: cover;
+}
+
+#container {
+    width: 90%;
+    max-width: 350px; /* Desktop ke liye max width */
+    height: auto;
+    background-color: rgb(32, 31, 31);
+    box-shadow: rgb(4, 192, 244) 0px 0px 6px;
+    border-radius: 16px;
+    padding: 15px;
+    text-align: center;
+}
+
+.inp {
+    width: 100%;
+    height: 60px;
+    font-size: 30px;
+    background: transparent;
+    color: white;
+    border: none;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.inp::placeholder {
+    color: aliceblue;
+}
+
+.inp:focus {
+    outline: none;
+}
+
+.button-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 buttons per row */
+    gap: 10px;
+    padding: 10px;
+}
+
+button {
+    width: 100%;
+    height: 60px;
+    border-radius: 25px;
+    background-color: black;
+    color: white;
+    font-size: 18px;
+    border: none;
+    transition: 0.2s;
+    box-shadow: rgb(4, 189, 235) 0px 2px 2px  ;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: rgb(20, 20, 20);
+}
+
+/* Special buttons */
+.operator {
+    color: rgb(9, 198, 9);
+    font-size: 20px;
+    
+}
+
+.equal {
+    background-color: orange;
+    color: white;
+    font-size: 25px;
+}
+.equal:hover{
+    cursor: pointer;
+    background-color: rgb(10, 182, 240);
+}

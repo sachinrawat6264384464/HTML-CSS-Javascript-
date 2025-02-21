@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="loginform.css">
+</head>
+<body>
+<div id="copy">
+
+</div>
+<div id="logo">
+  
+    
+     
+     
+     
+  </div>
+
+    <form action="">
+        <div class="form_id">
+           <label for="">Username</label>
+            <input type="text" placeholder="" id="username">
+            <label for="" class="pa">Password</label>
+            <input type="text" placeholder="" id="password" >
+            <p class="speciale">1.one-specialecharecter</p>
+            <p class="upper">2.one-uppercaseletter</p> 
+            <p class="lower">3.one-lowercaseletter</p>
+            <p class="number">4.one-number</p>
+            <input type="checkbox" id="check">
+            <h3>are you sure</h3>
+        
+            <div>
+            
+            <button class="login">login</button>
+            <button class="signup">signup</button>
+         </div>
+         </div>
+    </form>
+    <script>
+const password=document.getElementById("password");
+const username=document.getElementById("username");
+const signup=document.querySelector(".signup");
+const special=document.querySelector(".speciale")
+const upper=document.querySelector(".upper")
+const lower=document.querySelector(".lower")
+const num=document.querySelector(".number")
+const typo=document.querySelector(".pa")
+
+
+
+let enterpassword=""
+
+
+signup.addEventListener("click",()=>{
+    if(enterpassword===""){
+       typo.innerText="enter password"
+       typo.style.color="red"
+    
+    }
+
+})
+password.addEventListener("input",(e)=>{
+     enterpassword=e.target.value
+    check(enterpassword)
+
+})
+
+const check =(string)=>{
+  let uppercase=/[A-Z]/.test(string)
+  let lowercase=/[a-z]/.test(string)
+  let number=/[0-9]/.test(string)
+  let speciale=/[@#$%^&!~_-]/.test(string)
+  if(!uppercase){
+  var hpupper=upper.style.color="red"
+  signup.disabled=false
+  
+  }else{
+  upper.style.color=""
+  signup.disabled=true
+  
+}
+  if(!lowercase){
+    var lowerr= lower.style.color="red"
+    signup.disabled=false
+    
+  }else{
+  
+  lower.style.color=""
+  signup.disabled=true
+}
+  if(!speciale){
+    var hpspeciale=special.style.color="red"
+    signup.disabled=false
+    
+  }else{
+    special.style.color=""
+    signup.disabled=true
+  }
+  if(!number){
+ var numbers= num.style.color="red"
+  
+  }else{
+  num.style.color=""
+  
+  
+  }
+
+  if(!lowerr && !hpupper && !numbers && !hpspeciale){
+    signup.disabled=false
+    signup.style.backgroundColor=""
+     
+  
+  }else{
+      signup.disabled=true
+      signup.style.backgroundColor="#c7c0c5"
+  }
+
+}
+
+username.addEventListener("input",(e)=>{
+    console.log(e.target.value)
+
+
+})
+
+    
+    
+    
+    </script>
+</body>
+</html>

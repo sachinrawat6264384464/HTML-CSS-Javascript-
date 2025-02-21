@@ -1,0 +1,99 @@
+*{
+margin:0px;
+padding:0px;
+
+}
+body{
+width:100%;
+height:100%;
+display:flex;
+align-items:center;
+justify-content:center;
+background-color: black;
+
+
+}
+
+.card {
+    width: 400px;
+    height: 500px;
+    background-color: rgb(232, 238, 238);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid red;
+}
+
+.card2 {
+    width: 100%;
+    height: auto;
+}
+
+.card2 img {
+    width: 80%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 50px;
+    display: block;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 30px;
+    color: black;
+    margin-top: 45px;
+}
+
+.card h5 {
+    font-size: 25px;
+    color: black;
+    margin-top: 2px;
+}
+.card button{
+background-color:rgb(30, 83, 206);
+width:150px;
+height:80px;
+color: rgb(248, 244, 244);
+font-weight: 800;
+border-radius: 10px;
+
+
+}
+.card button:hover{
+cursor:pointer;
+
+}
+#i{
+color:rgb(248, 245, 247);
+font-size: 70px;
+position: absolute;
+top:30%;
+left:46%;
+transform: translate(-50%, -50%) scale(0);
+opacity: 0;
+transition: transform ease 0.5s;
+
+}
+#love{
+font-size:50px;
+max-width:480px;
+position: absolute;
+left: auto;
+border-radius:20px;
+position: absolute;
+left:40%;
+
+}
+.cursor{
+width:20px;
+height:20px;
+border-radius:50%;
+background-color:rgb(250, 247, 247);
+position: absolute;
+transition: all linear 0.2s;
+mix-blend-mode: difference;
+}

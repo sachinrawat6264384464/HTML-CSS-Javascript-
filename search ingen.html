@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="search_engen.html">
+</head>
+
+<body>
+    <div class ="user_search">
+    <label for="search">saerch users</label><br>
+     <input type="search" id="search"   >
+    </div>
+   
+    <div class="user-card">
+        <!--div class="card">
+            <h1 class="name">sachijn rawat</h1>
+            <h2 class="email">rawat662@gmail.com</h2>
+        <iv>
+        <div class="card">
+            <div class="name">sachijn rawat</div>
+            <div class="email">rawat662@gmail.com</div>
+        </div>
+        <div class="card">
+            <div class="name">sachijn rawat</div>
+            <div class="email">rawat662@gmail.com</div>
+        </div>
+        <div class="card">
+            <div class="name">sachijn rawat</div>
+            <div class="email">rawat662@gmail.com</div>
+        </div>
+        <div class="card">
+            <div class="name">sachijn rawat</div>
+            <div class="email">rawat662@gmail.com</div>
+        </div>
+        <div-- class="card">
+            <div class="name">sachijn rawat</div>
+            <div class="email">rawat662@gmail.com</div>
+        </div-->
+        
+        
+       
+    </div>
+    
+<script>
+const searchbtn = document.getElementById("search")
+
+let users=[]
+
+const apii="https://jsonplaceholder.typicode.com/users"
+const getapi=async(api)=>{
+  const response=  await fetch(api)
+  const data=await response.json()
+  users=data
+  showinfo(users)
+  
+
+}
+
+const usercard=document.querySelector(".user-card")
+const showinfo=(data)=>{
+    usercard.innerHTML=""
+data.forEach( info=>{
+   
+   const box=document.createElement("div")
+   box.classList.add("card")
+   box.innerHTML=`<div class="name">${info.name}</div>
+            <div class="email">${info.email}</div>`
+
+            usercard.appendChild(box)
+})
+
+
+}
+
+
+searchbtn.addEventListener("input", (e)=>{
+   const value=e.target.value.toLowerCase() 
+  
+    const fetchapi= users.filter(user=>
+               user.name.toLowerCase().includes(value) ||
+               user.email.toLowerCase().includes(value)
+    
+    
+    )
+    
+    
+    showinfo(fetchapi)
+})
+getapi(apii)
+
+</script> 
+    
+   
+</body>
+</html>

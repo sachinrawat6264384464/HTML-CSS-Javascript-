@@ -1,0 +1,41 @@
+.user_search{
+    display:flex;
+    flex-direction:column;
+    width:200px;
+    gap: 1rem;
+}
+input{
+font-size:1rem;
+}
+
+label{
+font-size:20px;
+
+}
+.user-card{
+display: flex;
+flex-wrap:wrap;
+justify-content:space-between;
+gap: .25rem;
+padding-top: 10px;
+height: auto;
+
+
+}
+.card{
+border: 1px solid black;
+background-color:white;
+padding: .5rem;
+text-align: center;
+max-width: 300px;
+width: 100%;
+
+}
+.card>.name{
+margin-bottom:.25rem;
+
+}
+.card>.email{
+
+color:rgb(24, 21, 21);
+}
